@@ -70,27 +70,32 @@ body {
 /* Bottom menu */
 .bottom-menu {
   position: fixed;
-  bottom: 20px;
+  bottom: 20px; /* standardafstand */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 20px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.9);
   padding: 10px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 9999; /* sikrer at menuen ligger over alt */
+  transition: bottom 0.3s ease;
 }
 
 .bottom-menu a {
-  color: #000;
+  color: #000; /* Sort tekst */
   text-decoration: none;
   font-size: 1.2rem;
   transition: transform 0.3s, color 0.3s;
+  z-index: 9999;
 }
+
 .bottom-menu a:hover {
-  color: #FA2D55;
+  color: #FF0000;
   transform: scale(1.1);
 }
+
 
 /* Mobile menu icon */
 .mobile-menu-icon {
@@ -135,6 +140,21 @@ body {
   color: #FA2D55;
 }
 
+.songkick-container {
+  max-width: 800px;     /* bredere container på desktop */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.songkick-container iframe,
+.songkick-container .songkick-widget {
+  width: 100% !important;  /* tving desktop bredde */
+  min-width: 600px;        /* minimum bredde, så den ikke trækker mobillayout */
+  min-height: 500px;       /* tilpasset højde */
+}
+
+
+
 /* Footer */
 .site-footer {
   background: #000000;
@@ -149,41 +169,6 @@ body {
   margin: 0 auto;
 }
 
-.newsletter h3 {
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-}
-
-.newsletter form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.newsletter input[type="email"] {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  width: 250px;
-  max-width: 100%;
-}
-
-.newsletter button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #FA2D55;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-}
-.newsletter button:hover {
-  background: #d7264a;
-  transform: scale(1.05);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .mobile-menu-icon {
@@ -191,66 +176,6 @@ body {
   }
   .bottom-menu {
     display: none; /* skjul bundmenu på mobil, hvis ønsket */
-  }
-}
-
-/* Footer */
-.site-footer {
-  background: #000000;
-  color: #fff;
-  padding: 40px 20px;
-  margin-top: 80px;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.newsletter h3 {
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-}
-
-.newsletter form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.newsletter input[type="email"] {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  width: 250px;
-  max-width: 100%;
-}
-
-.newsletter button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #FA2D55;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-}
-.newsletter button:hover {
-  background: #d7264a;
-  transform: scale(1.05);
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  .newsletter form {
-    flex-direction: column;
-  }
-  .newsletter input[type="email"], 
-  .newsletter button {
-    width: 100%;
   }
 }
 
