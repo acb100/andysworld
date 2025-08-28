@@ -49,23 +49,43 @@ body {
   padding: 0 20px;
   text-align: center;
 }
+
 .concerts-section h2 {
   margin-bottom: 30px;
   font-size: 2rem;
 }
 
-/* Songkick widget container */
-.songkick-widget {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+/* Wrapper for centering Songkick widget */
+.songkick-wrapper {
+  width: 100%;
+  max-width: 900px; /* maks bredde på store skærme */
+  margin: 0 auto;   /* centrerer */
+  padding: 0 20px;  /* lidt luft til siderne */
+  box-sizing: border-box;
 }
-.songkick-widget:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+
+.songkick-container {
+  width: 100%;
 }
+
+.songkick-container iframe {
+  width: 100%;
+  min-width: 0;
+  border: none;
+}
+
+
+/* Mobil version: tablet og mindre */
+@media (max-width: 1023px) {
+  .songkick-container iframe {
+    min-width: 0; /* mobil layout */
+    width: 100%;
+  }
+}
+
+
+
+
 
 /* Bottom menu */
 .bottom-menu {
@@ -141,16 +161,14 @@ body {
 }
 
 .songkick-container {
-  max-width: 800px;     /* bredere container på desktop */
+  max-width: 900px; /* desktop max */
   width: 100%;
   margin: 0 auto;
 }
 
-.songkick-container iframe,
-.songkick-container .songkick-widget {
-  width: 100% !important;  /* tving desktop bredde */
-  min-width: 600px;        /* minimum bredde, så den ikke trækker mobillayout */
-  min-height: 500px;       /* tilpasset højde */
+.songkick-container iframe {
+  width: 100% !important;
+  min-width: 0 !important;
 }
 
 
