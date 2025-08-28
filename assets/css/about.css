@@ -163,6 +163,36 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 30px;
+    justify-items: center; /* tilføjet: centrerer boksene i grid */
+  }
+
+  .about-section .about-box {
+    width: 90%;
+    /* margin: 0 auto; kan fjernes, grid centrerer nu */
+  }
+
+  .photo-row {
+    justify-content: center;
+  }
+
+  .about-box img.about-photo {
+    width: calc(50% - 5px); /* 2 billeder på række */
+  }
+
+  .top-links .icon-link img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .bottom-menu { display: none; } /* skjul bottom menu på tablet/mobil */
+}
+@media (max-width: 768px) {
+  .mobile-menu-icon { display: block; }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
   }
 
   .about-section .about-box {
