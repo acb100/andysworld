@@ -56,7 +56,6 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-
 .bottom-menu a {
   color: #000;
   text-decoration: none;
@@ -84,7 +83,7 @@ body {
   color: #000;
   padding: 30px;
   border-radius: 15px;
-  max-width: 800px; /* større boks */
+  max-width: 800px;
   width: 100%;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   transition: transform 0.3s;
@@ -119,17 +118,12 @@ body {
 }
 
 /* Photos: 4 på række */
-.photo-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
-}
 .about-photo {
   width: calc(25% - 7.5px); /* 4 billeder på række */
   height: auto;
   object-fit: cover;
   border-radius: 12px;
+  margin-bottom: 10px;
   transition: transform 0.3s, filter 0.3s;
 }
 .about-photo:hover {
@@ -186,22 +180,14 @@ body {
     display: block;
   }
   .bottom-menu {
-    display: none; /* skjul bundmenu på mobil, hvis ønsket */
+    display: none; /* skjul bundmenu på mobil */
   }
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
   .top-links .icon-link img {
     width: 28px;
     height: 28px;
   }
-  .about-photo {
-    width: calc(50% - 5px); /* 2 billeder på række */
-  }
   .about-section {
-    grid-template-columns: 1fr; /* 1 kolonne på tablet */
+    grid-template-columns: 1fr; /* 1 kolonne */
     gap: 30px;
   }
   .about-section .about-box {
@@ -209,14 +195,14 @@ body {
     grid-row: auto;
     max-width: 90%;
   }
+  .about-photo {
+    width: 100%; /* 1 billede på række */
+  }
 }
 
 @media (max-width: 480px) {
   .top-links .icon-link img {
     width: 24px;
     height: 24px;
-  }
-  .about-photo {
-    width: 100%; /* 1 billede på række */
   }
 }
