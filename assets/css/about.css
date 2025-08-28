@@ -156,6 +156,14 @@ body {
     justify-items: center; /* centrer boksene */
   }
 
+  /* Fjern grid placement på mobil */
+  .about-section .about-box:nth-child(1),
+  .about-section .about-box:nth-child(2),
+  .about-section .about-box:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .about-section .about-box {
     width: 90%;
   }
@@ -171,9 +179,4 @@ body {
   .top-links .icon-link img { width: 28px; height: 28px; }
 
   .bottom-menu { display: none; } /* skjul bottom menu */
-}
-
-@media (max-width: 480px) {
-  .top-links .icon-link img { width: 24px; height: 24px; }
-  .about-box img.about-photo { width: 100%; } /* 1 billede på række */
 }
