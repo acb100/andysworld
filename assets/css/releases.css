@@ -22,20 +22,21 @@ body {
 .top-links .icon-link img {
   width: 32px;
   height: 32px;
+  transition: transform 0.3s, filter 0.3s;
   filter: invert(100%) brightness(200%); /* altid hvide */
-  transition: transform 0.3s;
 }
-.top-links .icon-link img:hover {
+.top-links .icon-link:hover img {
   transform: scale(1.4);
+  filter: invert(100%) brightness(200%);
 }
 
 /* Logo */
 .logo {
-  display: block;
   max-width: 300px;
   width: 40%;
   height: auto;
   margin: 30px auto;
+  display: block;
   transition: transform 0.3s;
 }
 .logo:hover {
@@ -68,43 +69,57 @@ body {
 
 /* Releases section */
 .releases-section {
+  padding: 60px 20px;
   max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  color: #fff;
 }
 .releases-section h2 {
   text-align: center;
-  color: #fff;
   margin-bottom: 40px;
 }
+
+/* Grid for releases */
 .releases-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
 }
+
+/* Single release */
 .release {
   background: #fff;
   border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  text-align: center;
+  color: #000;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+.release:hover {
+  transform: scale(1.02);
 }
 .release img {
   width: 100%;
+  height: auto;
   border-radius: 12px;
-  margin-bottom: 10px;
 }
+
+/* Release links (Spotify, Apple Music, Bandcamp) */
 .release-links {
   display: flex;
-  gap: 10px;
-  justify-content: center;
+  gap: 15px;
   margin-top: 10px;
+  justify-content: center;
 }
+
 .release-links img {
   width: 32px;
   height: 32px;
-  filter: none; /* sorte ikoner på hvid baggrund */
   transition: transform 0.3s;
+  filter: invert(0%) brightness(100%); /* altid sorte */
 }
+
 .release-links img:hover {
   transform: scale(1.2);
 }
@@ -117,8 +132,8 @@ body {
   left: 20px;
   font-size: 2rem;
   cursor: pointer;
-  color: #fff;
   z-index: 1000;
+  color: #fff;
 }
 
 /* Mobile sidebar menu */
@@ -133,36 +148,22 @@ body {
   transition: left 0.3s ease;
   z-index: 999;
 }
-.mobile-nav.open {
-  left: 0;
-}
-.mobile-nav ul {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-left: 20px;
-}
-.mobile-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-.mobile-nav a:hover {
-  color: #FA2D55;
-}
+.mobile-nav.open { left: 0; }
+.mobile-nav ul { display: flex; flex-direction: column; gap: 20px; padding-left: 20px; }
+.mobile-nav a { color: #fff; text-decoration: none; font-size: 1.2rem; transition: color 0.3s; }
+.mobile-nav a:hover { color: #FA2D55; }
 
 /* Responsive */
-@media(max-width:768px){
-  .mobile-menu-icon { display:block; }
-  .releases-grid { grid-template-columns: 1fr; }
-  .release-links img { width:28px; height:28px; }
+@media (max-width: 768px) {
+  .mobile-menu-icon { display: block; }
+  .top-links .icon-link img { width: 28px; height: 28px; }
+  .release-links img { width: 28px; height: 28px; filter: invert(0%) brightness(100%); } /* sort på tablet */
 }
 
-@media(max-width:480px){
-  .release-links img { width:24px; height:24px; }
+@media (max-width: 480px) {
+  .top-links .icon-link img { width: 24px; height: 24px; }
+  .release-links img { width: 24px; height: 24px; filter: invert(0%) brightness(100%); } /* sort på mobil */
 }
-
 @media (max-width: 768px) {
   .bottom-menu {
     display: none; /* skjuler bundmenu på tablet/mobil */

@@ -4,71 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Releases | Nyt Navn</title>
-  <link rel="stylesheet" href="assets/css/releases.css">
+  <link rel="stylesheet" href="./assets/css/releases.css">
 </head>
 <body>
 
-<!-- Mobile menu -->
-<div class="mobile-menu-icon" onclick="toggleMobileNav()">☰</div>
-<nav class="mobile-nav" id="mobileNav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="releases.html">Releases</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="concerts.html">Concerts</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Mobile menu icon -->
+  <div class="mobile-menu-icon" onclick="toggleMobileNav()">☰</div>
 
-<script>
-function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
-</script>
+  <!-- Mobile sidebar menu -->
+  <nav class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="releases.html">Releases</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="concerts.html">Concerts</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<header>
-  <!-- Top social links -->
-  <div class="top-links">
-    <a href="https://www.instagram.com/anrsnfg/" target="_blank"><img src="assets/img/icons/instagram.svg" alt="Instagram"></a>
-    <a href="https://www.youtube.com/@nytnavn.mp3" target="_blank"><img src="assets/img/icons/youtube.svg" alt="YouTube"></a>
-    <a href="https://open.spotify.com/artist/42TDTONjEWAzrDD1X8QwWL?si=M-NN_2liQI2Xs_24YV2hUQ" target="_blank"><img src="assets/img/icons/spotify.svg" alt="Spotify"></a>
-    <a href="https://music.apple.com/dk/artist/nyt-navn/1826594807?l=da" target="_blank"><img src="assets/img/icons/applemusic.svg" alt="Apple Music"></a>
-    <a href="https://nytnavn.bandcamp.com/" target="_blank"><img src="assets/img/icons/bandcamp.svg" alt="Bandcamp"></a>
-  </div>
-  <img src="assets/img/logo.png" alt="Nyt Navn Logo" class="logo">
-</header>
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('open');
+    }
+  </script>
 
-<main class="releases-section">
-  <h2>My Releases</h2>
-  <div class="releases-grid">
-    <div class="release">
-      <img src="assets/img/covers/danseralene.png" alt="Danser Alene">
-      <h3>Danser Alene</h3>
-      <div class="release-links">
-        <a href="https://open.spotify.com/track/74z5fYH1Mg7fj2QUiB4F9r" target="_blank"><img src="assets/img/icons/spotify.svg" alt="Spotify"></a>
-        <a href="https://music.apple.com/dk/album/danser-alene/1826741791?i=1826741793" target="_blank"><img src="assets/img/icons/applemusic.svg" alt="Apple Music"></a>
-        <a href="https://nytnavn.bandcamp.com/track/danser-alene" target="_blank"><img src="assets/img/icons/bandcamp.svg" alt="Bandcamp"></a>
-      </div>
+  <!-- Header med top links og logo -->
+  <header>
+    <div class="top-links">
+      <a href="https://www.instagram.com/anrsnfg/" target="_blank" class="icon-link" aria-label="Instagram">
+        <img src="assets/img/icons/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://www.youtube.com/@nytnavn.mp3" target="_blank" class="icon-link" aria-label="YouTube">
+        <img src="assets/img/icons/youtube.svg" alt="YouTube">
+      </a>
+      <a href="https://open.spotify.com/artist/42TDTONjEWAzrDD1X8QwWL?si=M-NN_2liQI2Xs_24YV2hUQ" target="_blank" class="icon-link" aria-label="Spotify">
+        <img src="assets/img/icons/spotify.svg" alt="Spotify">
+      </a>
+      <a href="https://music.apple.com/dk/artist/nyt-navn/1826594807?l=da" target="_blank" class="icon-link" aria-label="Apple Music">
+        <img src="assets/img/icons/applemusic.svg" alt="Apple Music">
+      </a>
+      <a href="https://nytnavn.bandcamp.com/" target="_blank" class="icon-link" aria-label="Bandcamp">
+        <img src="assets/img/icons/bandcamp.svg" alt="Bandcamp">
+      </a>
     </div>
 
-    <div class="release">
-      <img src="assets/img/covers/together.jpg" alt="Together">
-      <h3>Together</h3>
-      <div class="release-links">
-        <a href="https://open.spotify.com/track/6sGssj5BTMgug264aNL5U9" target="_blank"><img src="assets/img/icons/spotify.svg" alt="Spotify"></a>
-        <a href="https://music.apple.com/dk/album/together/1765569007?i=1765569009" target="_blank"><img src="assets/img/icons/applemusic.svg" alt="Apple Music"></a>
-        <a href="https://nytnavn.bandcamp.com/track/together" target="_blank"><img src="assets/img/icons/bandcamp.svg" alt="Bandcamp"></a>
-      </div>
-    </div>
-  </div>
-</main>
+    <img src="assets/img/logo.png" alt="Nyt Navn Logo" class="logo">
+  </header>
 
-<!-- Bottom menu -->
-<div class="bottom-menu">
-  <a href="index.html">Home</a>
-  <a href="releases.html">Releases</a>
-  <a href="concerts.html">Concerts</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
+  <!-- Releases section -->
+  <main class="releases-section">
+    <h2>My Releases</h2>
+    <div class="releases-grid">
+
+      <div class="release">
+        <img src="assets/img/covers/danseralene.png" alt="Danser Alene Cover">
+        <h3>Danser Alene</h3>
+        <div class="release-links">
+          <a href="https://open.spotify.com/track/74z5fYH1Mg7fj2QUiB4F9r?si=e4875424c9b04f73" target="_blank">
+            <img src="assets/img/icons/spotify.svg" alt="Spotify">
+          </a>
+          <a href="https://music.apple.com/dk/album/danser-alene/1826741791?i=1826741793&l=da" target="_blank">
+            <img src="assets/img/icons/applemusic.svg" alt="Apple Music">
+          </a>
+          <a href="https://nytnavn.bandcamp.com/track/danser-alene" target="_blank">
+            <img src="assets/img/icons/bandcamp.svg" alt="Bandcamp">
+          </a>
+        </div>
+      </div>
+
+      <div class="release">
+        <img src="assets/img/covers/together.jpg" alt="Together Cover">
+        <h3>Together</h3>
+        <div class="release-links">
+          <a href="https://open.spotify.com/track/6sGssj5BTMgug264aNL5U9?si=71cd03ac74bb4381" target="_blank">
+            <img src="assets/img/icons/spotify.svg" alt="Spotify">
+          </a>
+          <a href="https://music.apple.com/dk/album/together/1765569007?i=1765569009&l=da" target="_blank">
+            <img src="assets/img/icons/applemusic.svg" alt="Apple Music">
+          </a>
+          <a href="https://nytnavn.bandcamp.com/track/together" target="_blank">
+            <img src="assets/img/icons/bandcamp.svg" alt="Bandcamp">
+          </a>
+        </div>
+      </div>
+
+      <!-- Tilføj flere releases på samme måde -->
+    </div>
+  </main>
+
+  <!-- Bottom menu -->
+  <div class="bottom-menu">
+    <a href="index.html">Home</a>
+    <a href="releases.html">Releases</a>
+    <a href="concerts.html">Concerts</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
 </body>
 </html>
