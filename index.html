@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYT NAVN – Euphoria in Motion</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Mobile menu icon -->
+<div class="mobile-menu-icon" onclick="toggleMobileNav()">☰</div>
+
+<!-- Mobile sidebar menu -->
+<nav class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="releases.html">Releases</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="concerts.html">Concerts</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<script>
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+</script>
+
+
+  <!-- Hero section -->
+  <header class="hero">
+    <div class="overlay">
+      <!-- Top social links -->
+      <div class="top-links">
+        <a href="https://www.instagram.com/anrsnfg/" target="_blank" class="icon-link" aria-label="Instagram">
+          <img src="assets/img/icons/instagram.svg" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@nytnavn.mp3" target="_blank" class="icon-link" aria-label="YouTube">
+          <img src="assets/img/icons/youtube.svg" alt="YouTube">
+        </a>
+        <a href="https://open.spotify.com/artist/42TDTONjEWAzrDD1X8QwWL?si=M-NN_2liQI2Xs_24YV2hUQ" target="_blank" class="icon-link" aria-label="Spotify">
+          <img src="assets/img/icons/spotify.svg" alt="Spotify">
+        </a>
+        <a href="https://music.apple.com/dk/artist/nyt-navn/1826594807?l=da" target="_blank" class="icon-link" aria-label="Apple Music">
+          <img src="assets/img/icons/applemusic.svg" alt="Apple Music">
+        </a>
+        <a href="https://nytnavn.bandcamp.com/" target="_blank" class="icon-link" aria-label="Bandcamp">
+          <img src="assets/img/icons/bandcamp.svg" alt="Bandcamp">
+        </a>
+      </div>
+
+      <!-- Logo / Artist name as image -->
+        <img src="assets/img/logo.png" alt="logo" class="logo">
+
+    </div>
+    <div class="bottom-menu">
+      <a href="index.html">Home</a>
+      <a href="releases.html">Releases</a>
+      <a href="concerts.html">Concerts</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <!-- Mobile menu toggle script -->
+  <script>
+    const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+    const mobileNav = document.getElementById('mobileNav');
+
+    mobileMenuIcon.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

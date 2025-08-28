@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Nyt Navn</title>
+  <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body>
+
+  <!-- Mobile menu icon -->
+<div class="mobile-menu-icon" onclick="toggleMobileNav()">☰</div>
+
+<!-- Mobile sidebar menu -->
+<nav class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="releases.html">Releases</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="concerts.html">Concerts</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<script>
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+</script>
+
+
+<header>
+  <!-- Top social links i korrekt rækkefølge -->
+  <div class="top-links">
+    <a href="https://www.instagram.com/anrsnfg/" target="_blank" class="icon-link" aria-label="Instagram">
+      <img src="assets/img/icons/instagram.svg" alt="Instagram">
+    </a>
+    <a href="https://www.youtube.com/@nytnavn.mp3" target="_blank" class="icon-link" aria-label="YouTube">
+      <img src="assets/img/icons/youtube.svg" alt="YouTube">
+    </a>
+    <a href="https://open.spotify.com/artist/42TDTONjEWAzrDD1X8QwWL?si=M-NN_2liQI2Xs_24YV2hUQ" target="_blank" class="icon-link" aria-label="Spotify">
+      <img src="assets/img/icons/spotify.svg" alt="Spotify">
+    </a>
+    <a href="https://music.apple.com/dk/artist/nyt-navn/1826594807?l=da" target="_blank" class="icon-link" aria-label="Apple Music">
+      <img src="assets/img/icons/applemusic.svg" alt="Apple Music">
+    </a>
+    <a href="https://nytnavn.bandcamp.com/" target="_blank" class="icon-link" aria-label="Bandcamp">
+      <img src="assets/img/icons/bandcamp.svg" alt="Bandcamp">
+    </a>
+  </div>
+
+  <!-- Logo -->
+  <img src="assets/img/logo.png" alt="Nyt Navn Logo" class="logo">
+</header>
+
+<main class="about-section">
+  <div class="about-box">
+    <h2>About Me</h2>
+    <p>Hello! I’m Andy, also known as NYT NAVN, a musician creating euphonic, immersive tracks for those who love to explore sound. My music is inspired by experimental synths, textures, and rhythmic exploration.</p>
+  </div>
+
+  <div class="about-box">
+    <h2>Press / Photos</h2>
+    <img src="assets/img/about/1.png" alt="Photo 1" class="about-photo">
+    <img src="assets/img/about/2.png" alt="Photo 2" class="about-photo">
+    <img src="assets/img/about/3.jpeg" alt="Photo 3" class="about-photo">
+    <img src="assets/img/about/4.jpg" alt="Photo 4" class="about-photo">
+    
+  </div>
+
+  <div class="about-box">
+    <h2>Fun Facts</h2>
+    <ul>
+      <li><b>Favorite instruments:</b> Synths, Samplers</li>
+      <li><b>Current project:</b> Exploring trip hop and ambient music</li>
+      <li><b>Music influences:</b> Electronic, Industrial, Psychedelic and Ambient</li>
+      <li><b>Production gear:</b> Macbook Pro M2 (2023), Ableton Live 12 Suite, Ableton Move, Beyerdynamic DT770 Pro, Yamaha HS7, Røde NT1-A</li>
+      <li><b>DJ gear:</b> Denon SC Live 4 (for practice), Sennheiser HD25, Sandisk Extreme Pro 256GB (2 pieces), Rekordbox</li>
+    </ul>
+  </div>
+</main>
+
+<!-- Bottom menu -->
+<div class="bottom-menu">
+  <a href="index.html">Home</a>
+  <a href="releases.html">Releases</a>
+  <a href="concerts.html">Concerts</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+</body>
+</html>

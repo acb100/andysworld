@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Nyt Navn</title>
+  <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+<body>
+
+  <!-- Mobile menu icon -->
+<div class="mobile-menu-icon" onclick="toggleMobileNav()">☰</div>
+
+<!-- Mobile sidebar menu -->
+<nav class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="releases.html">Releases</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="concerts.html">Concerts</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<script>
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+</script>
+
+
+<header>
+  <!-- Top social links -->
+  <div class="top-links">
+    <a href="https://www.instagram.com/anrsnfg/" target="_blank" class="icon-link" aria-label="Instagram">
+      <img src="assets/img/icons/instagram.svg" alt="Instagram">
+    </a>
+    <a href="https://www.youtube.com/@nytnavn.mp3" target="_blank" class="icon-link" aria-label="YouTube">
+      <img src="assets/img/icons/youtube.svg" alt="YouTube">
+    </a>
+    <a href="https://open.spotify.com/artist/42TDTONjEWAzrDD1X8QwWL?si=M-NN_2liQI2Xs_24YV2hUQ" target="_blank" class="icon-link" aria-label="Spotify">
+      <img src="assets/img/icons/spotify.svg" alt="Spotify">
+    </a>
+    <a href="https://music.apple.com/dk/artist/nyt-navn/1826594807?l=da" target="_blank" class="icon-link" aria-label="Apple Music">
+      <img src="assets/img/icons/applemusic.svg" alt="Apple Music">
+    </a>
+    <a href="https://nytnavn.bandcamp.com/" target="_blank" class="icon-link" aria-label="Bandcamp">
+      <img src="assets/img/icons/bandcamp.svg" alt="Bandcamp">
+    </a>
+  </div>
+
+  <!-- Logo -->
+  <img src="assets/img/logo.png" alt="Nyt Navn Logo" class="logo">
+</header>
+
+<main class="contact-section">
+  <div class="contact-box">
+    <h2>Contact Me</h2>
+    <p>If you want to reach out for bookings, collaborations, or just say hi, use the form below:</p>
+
+    <form id="contactForm" action="sendmail.php" method="post" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Status box -->
+    <div id="statusBox" class="status-box"></div>
+  </div>
+</main>
+
+<!-- Bottom menu -->
+<div class="bottom-menu">
+  <a href="index.html">Home</a>
+  <a href="releases.html">Releases</a>
+  <a href="concerts.html">Concerts</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<script>
+const form = document.getElementById('contactForm');
+const statusBox = document.getElementById('statusBox');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  fetch('sendmail.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+    statusBox.textContent = data;
+    statusBox.className = "status-box show";
+
+    if(data.toLowerCase().includes("thank you")) {
+      statusBox.classList.add("success");
+      form.reset();
+    } else {
+      statusBox.classList.add("error");
+    }
+
+    // Fade out efter 5 sekunder
+    setTimeout(() => {
+      statusBox.classList.remove("show");
+    }, 5000);
+  })
+  .catch(() => {
+    statusBox.textContent = "Oops! Something went wrong. Please try again.";
+    statusBox.className = "status-box show error";
+
+    setTimeout(() => {
+      statusBox.classList.remove("show");
+    }, 5000);
+  });
+});
+</script>
+
+</body>
+</html>

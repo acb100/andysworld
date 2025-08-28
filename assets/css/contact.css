@@ -1,0 +1,206 @@
+/* Reset */
+body, h1, h2, p, ul, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul { list-style: none; }
+
+body {
+  font-family: Arial, sans-serif;
+  color: #000;
+  background: #000; /* sort baggrund */
+  overflow-x: hidden;
+}
+
+/* Top social links */
+.top-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.top-links .icon-link img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s, filter 0.3s;
+  filter: invert(100%) brightness(200%);
+}
+.top-links .icon-link:hover img {
+  transform: scale(1.4);
+  filter: invert(100%) brightness(200%);
+}
+
+/* Logo */
+.logo {
+  max-width: 300px;
+  width: 40%;
+  height: auto;
+  margin: 30px auto;
+  display: block;
+  transition: transform 0.3s;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Bottom menu */
+.bottom-menu {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  background: rgba(255,255,255,0.9);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.bottom-menu a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.3s, color 0.3s;
+}
+.bottom-menu a:hover {
+  color: #FF0000;
+  transform: scale(1.1);
+}
+
+/* Contact section */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+/* White box for form */
+.contact-box {
+  background: #fff;
+  color: #000;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+.contact-box:hover {
+  transform: scale(1.02);
+}
+.contact-box h2 {
+  margin-bottom: 15px;
+}
+
+/* Form styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #FF0000;
+  box-shadow: 0 0 5px #FF0000;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #FF0000;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+.contact-form button:hover {
+  transform: scale(1.05);
+  background: #cc0000;
+}
+
+/* Mobile menu icon */
+.mobile-menu-icon {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  color: #fff;
+}
+
+/* Mobile sidebar menu */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 200px;
+  height: 100%;
+  background: #111;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+.mobile-nav.open {
+  left: 0;
+}
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+}
+.mobile-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+.mobile-nav a:hover {
+  color: #FA2D55;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block;
+  }
+  .bottom-menu {
+    display: none; /* skjul bundmenu på mobil, hvis ønsket */
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-links .icon-link img {
+    width: 28px;
+    height: 28px;
+  }
+  .contact-box {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-links .icon-link img {
+    width: 24px;
+    height: 24px;
+  }
+  .contact-box {
+    padding: 20px;
+  }
+}

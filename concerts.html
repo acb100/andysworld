@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concerts | Nyt Navn</title>
+  <link rel="stylesheet" href="assets/css/concerts.css">
+</head>
+
+<!-- Mobile menu icon -->
+<div class="mobile-menu-icon" onclick="toggleMobileNav()">☰</div>
+
+<!-- Mobile sidebar menu -->
+<nav class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="releases.html">Releases</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="concerts.html">Concerts</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<script>
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+</script>
+
+<body>
+
+<header>
+  <!-- Top social links -->
+  <div class="top-links">
+    <a href="https://www.instagram.com/anrsnfg/" target="_blank" class="icon-link" aria-label="Instagram">
+      <img src="assets/img/icons/instagram.svg" alt="Instagram">
+    </a>
+    <a href="https://www.youtube.com/@nytnavn.mp3" target="_blank" class="icon-link" aria-label="YouTube">
+      <img src="assets/img/icons/youtube.svg" alt="YouTube">
+    </a>
+    <a href="https://open.spotify.com/artist/42TDTONjEWAzrDD1X8QwWL?si=M-NN_2liQI2Xs_24YV2hUQ" target="_blank" class="icon-link" aria-label="Spotify">
+      <img src="assets/img/icons/spotify.svg" alt="Spotify">
+    </a>
+    <a href="https://music.apple.com/dk/artist/nyt-navn/1826594807?l=da" target="_blank" class="icon-link" aria-label="Apple Music">
+      <img src="assets/img/icons/applemusic.svg" alt="Apple Music">
+    </a>
+    <a href="https://nytnavn.bandcamp.com/" target="_blank" class="icon-link" aria-label="Bandcamp">
+      <img src="assets/img/icons/bandcamp.svg" alt="Bandcamp">
+    </a>
+  </div>
+
+  <!-- Logo -->
+  <img src="assets/img/logo.png" alt="Nyt Navn Logo" class="logo">
+</header>
+
+<main class="concerts-section">
+  <h2>Upcoming Concerts</h2>
+
+  <!-- Songkick embed widget -->
+  <a href="https://www.songkick.com/artists/10383638" class="songkick-widget" data-theme="dark" data-track-button="on" data-detect-style="on" data-locale="en" data-other-artists="on" data-share-button="on" data-country-filter="on" data-rsvp="on" data-request-show="off" data-past-events="off" data-past-events-offtour="off" data-remind-me="off" style="display: none;">
+NYT NAVN LIVE SHOWS</a><script src='//widget-app.songkick.com/injector/10383638'></script>
+
+<!-- Bottom menu -->
+<div class="bottom-menu">
+  <a href="index.html">Home</a>
+  <a href="releases.html">Releases</a>
+  <a href="concerts.html">Concerts</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+</body>
+</html>
