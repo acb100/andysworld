@@ -49,15 +49,26 @@
       </a>
     </div>
 
-    <img src="assets/img/logo.png" alt="Nyt Navn Logo" class="logo">
+    <!-- Logo -->
+  <a href="index.html">
+    <img src="assets/img/logo.png" alt="Logo" class="logo">
+  </a>
   </header>
+
+  <!-- Filter buttons -->
+  <div class="release-filters">
+      <button onclick="filterReleases('all')">All</button>
+      <button onclick="filterReleases('single')">Single</button>
+      <button onclick="filterReleases('ep')">EP</button>
+      <button onclick="filterReleases('album')">Album</button>
+  </div>
 
   <!-- Releases section -->
   <main class="releases-section">
     <h2>My Releases</h2>
     <div class="releases-grid">
 
-      <div class="release">
+      <div class="release" data-type="single" data-year="2025">
         <img src="assets/img/covers/danseralene.webp" alt="Danser Alene Cover">
         <h3>Danser Alene</h3>
         <div class="release-links">
@@ -71,9 +82,12 @@
             <img src="assets/img/icons/bandcamp.svg" alt="Bandcamp">
           </a>
         </div>
+        <div class="release-meta">
+          <span class="type">Single</span> <span class="year">2025</span>
+        </div>
       </div>
 
-      <div class="release">
+      <div class="release" data-type="single" data-year="2024">
         <img src="assets/img/covers/together.webp" alt="Together Cover">
         <h3>Together</h3>
         <div class="release-links">
@@ -86,6 +100,9 @@
           <a href="https://nytnavn.bandcamp.com/track/together" target="_blank">
             <img src="assets/img/icons/bandcamp.svg" alt="Bandcamp">
           </a>
+        </div>
+        <div class="release-meta">
+          <span class="type">Single</span> <span class="year">2024</span>
         </div>
       </div>
 
@@ -102,6 +119,20 @@
     <a href="contact.html">Contact</a>
   </div>
 
+  <script>
+function filterReleases(type) {
+  document.querySelectorAll('.release').forEach(function(release) {
+    if (type === 'all' || release.dataset.type === type) {
+      release.style.display = '';
+    } else {
+      release.style.display = 'none';
+    }
+  });
+  // Aktiv-knap
+  document.querySelectorAll('.release-filters button').forEach(btn => btn.classList.remove('active'));
+  document.querySelector(`.release-filters button[onclick*="${type}"]`).classList.add('active');
+}
+</script>
 </body>
 
 <!-- Footer -->
