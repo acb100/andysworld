@@ -108,6 +108,7 @@
 
       <!-- Tilføj flere releases på samme måde -->
     </div>
+    <div id="noReleasesMsg" style="display:none; text-align:center; color:#fff; margin-top:2em;">No releases yet.</div>
   </main>
 
   <!-- Bottom menu -->
@@ -121,9 +122,11 @@
 
   <script>
 function filterReleases(type) {
+  let anyVisible = false;
   document.querySelectorAll('.release').forEach(function(release) {
     if (type === 'all' || release.dataset.type === type) {
       release.style.display = '';
+      anyVisible = true;
     } else {
       release.style.display = 'none';
     }
@@ -131,6 +134,8 @@ function filterReleases(type) {
   // Aktiv-knap
   document.querySelectorAll('.release-filters button').forEach(btn => btn.classList.remove('active'));
   document.querySelector(`.release-filters button[onclick*="${type}"]`).classList.add('active');
+  // No releases message
+  document.getElementById('noReleasesMsg').style.display = anyVisible ? 'none' : '';
 }
 </script>
 </body>
