@@ -1,227 +1,66 @@
-/* Reset */
-body, h1, h2, p, ul, input, textarea, button {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-ul { list-style: none; }
-
-body {
-  font-family: Arial, sans-serif;
-  color: #000;
-  background: #000; /* sort baggrund */
-  overflow-x: hidden;
-  padding-bottom: 80px; /* plads til bottom menu */
-}
-
-/* Top social links */
-.top-links {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-.top-links .icon-link img {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.3s, filter 0.3s;
-  filter: invert(100%) brightness(200%);
-}
-.top-links .icon-link:hover img {
-  transform: scale(1.4);
-  filter: invert(100%) brightness(200%);
-}
-
-/* Logo */
-.logo {
-  max-width: 300px;
-  width: 40%;
-  height: auto;
-  margin: 30px auto;
-  display: block;
-  transition: transform 0.3s;
-}
-.logo:hover {
-  transform: scale(1.1);
-}
-
-/* Bottom menu */
-.bottom-menu {
-  position: fixed;
-  bottom: 20px; /* standardafstand */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-  background: rgba(255,255,255,0.9);
-  padding: 10px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 9999; /* sikrer at menuen ligger over alt */
-  transition: bottom 0.3s ease;
-}
-
-.bottom-menu a {
-  color: #000; /* Sort tekst */
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: transform 0.3s, color 0.3s;
-  z-index: 9999;
-}
-
-.bottom-menu a:hover {
-  color: #FF0000;
-  transform: scale(1.1);
-}
-
-
-/* Contact section */
 .contact-section {
   display: flex;
   justify-content: center;
-  padding: 80px 20px;
+  align-items: center;
+  min-height: 70vh;
+  padding: 40px 0;
 }
-
-/* White box for form */
 .contact-box {
   background: #fff;
-  color: #000;
-  padding: 40px;
-  border-radius: 15px;
-  max-width: 800px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 40px 32px;
+  max-width: 420px;
   width: 100%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  margin: 0 auto;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 .contact-box:hover {
-  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  transform: scale(1.01);
 }
 .contact-box h2 {
-  margin-bottom: 15px;
+  margin-bottom: 24px;
+  color: #000;
 }
-
-/* Form styling */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 .contact-form input,
 .contact-form textarea {
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 1rem;
-  resize: none;
+  font-size: 1em;
+  font-family: inherit;
+  resize: vertical;
+  transition: border 0.2s;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
+  border: 1.5px solid #FA2D55;
   outline: none;
-  border-color: #FF0000;
-  box-shadow: 0 0 5px #FF0000;
 }
-
 .contact-form button {
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: #FF0000;
+  background: #FA2D55;
   color: #fff;
-  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1.1em;
+  font-family: inherit;
   cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
+  transition: background 0.2s, transform 0.15s;
 }
 .contact-form button:hover {
-  transform: scale(1.05);
-  background: #cc0000;
+  background: #d01e43;
+  transform: scale(1.03);
 }
-
-/* Mobile menu icon */
-.mobile-menu-icon {
-  display: none;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1000;
-  color: #fff;
-}
-
-/* Mobile sidebar menu */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 200px;
-  height: 100%;
-  background: #111;
-  padding-top: 60px;
-  transition: left 0.3s ease;
-  z-index: 999;
-}
-.mobile-nav.open {
-  left: 0;
-}
-.mobile-nav ul {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-left: 20px;
-}
-.mobile-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-.mobile-nav a:hover {
-  color: #FA2D55;
-}
-
-/* Footer */
-.site-footer {
-  background: #000000;
-  color: #fff;
-  padding: 40px 20px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-
-/* Responsive */
 @media (max-width: 768px) {
-  .mobile-menu-icon {
-    display: block;
-  }
-  .bottom-menu {
-    display: none; /* skjul bundmenu på mobil, hvis ønsket */
-  }
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
-  .top-links .icon-link img {
-    width: 28px;
-    height: 28px;
-  }
   .contact-box {
-    padding: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .top-links .icon-link img {
-    width: 24px;
-    height: 24px;
-  }
-  .contact-box {
-    padding: 20px;
+    padding: 24px 8px;
   }
 }

@@ -13,60 +13,7 @@ body {
   padding-bottom: 80px; /* plads til bottom menu */
 }
 
-/* Top social links */
-.top-links {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-.top-links .icon-link img {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.3s, filter 0.3s;
-  filter: invert(100%) brightness(200%);
-}
-.top-links .icon-link:hover img {
-  transform: scale(1.4);
-  filter: invert(100%) brightness(200%);
-}
-
-/* Logo */
-.logo {
-  max-width: 300px;
-  width: 40%;
-  height: auto;
-  margin: 30px auto;
-  display: block;
-  transition: transform 0.3s;
-}
-.logo:hover { transform: scale(1.1); }
-
-/* Bottom menu */
-.bottom-menu {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-  background: rgba(255,255,255,0.9);
-  padding: 10px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 9999;
-}
-.bottom-menu a {
-  color: #000;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: transform 0.3s, color 0.3s;
-  z-index: 9999;
-}
-.bottom-menu a:hover {
-  color: #FF0000;
-  transform: scale(1.1);
-}
+/* --- FJERNET: Top social links, Logo, Bottom menu (nu i common.css) --- */
 
 /* About section desktop grid */
 .about-section {
@@ -75,7 +22,7 @@ body {
   padding: 60px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px; /* Ens mellemrum mellem alle bokse */
+  gap: 10px;
   justify-items: stretch;
   align-items: stretch;
   grid-auto-flow: dense;
@@ -91,8 +38,6 @@ body {
   transition: box-shadow 0.2s, transform 0.2s;
   margin: 0;
 }
-
-
 
 .about-box:hover { transform: scale(1.02); }
 
@@ -114,11 +59,7 @@ body {
   margin: 0 auto;
 }
 
-
 /* About section desktop grid - dynamisk højder */
-
-
-/* Fjerne faste grid-placeringer */
 .about-section .about-box,
 .about-section .press-kit {
   grid-column: auto;
@@ -139,39 +80,8 @@ body {
 }
 .about-box img.about-photo:hover { transform: scale(1.05); }
 
-/* Mobile menu icon */
-.mobile-menu-icon {
-  display: none;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #fff;
-  z-index: 1000;
-}
-
-/* Mobile nav */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 200px;
-  height: 100%;
-  background: #111;
-  padding-top: 60px;
-  transition: left 0.3s ease;
-  z-index: 999;
-}
-.mobile-nav.open { left: 0; }
-.mobile-nav ul { display: flex; flex-direction: column; gap: 20px; padding-left: 20px; }
-.mobile-nav a { color: #fff; text-decoration: none; font-size: 1.2rem; transition: color 0.3s; }
-.mobile-nav a:hover { color: #FA2D55; }
-
 /* Responsive: tablet + mobil */
 @media (max-width: 768px) {
-  .mobile-menu-icon { display: block; }
-
   .about-section {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -193,13 +103,8 @@ body {
   .photo-row { justify-content: center; }
 
   .about-box img.about-photo { width: calc(50% - 5px); }
-
-  .top-links .icon-link img { width: 28px; height: 28px; }
-
-  .bottom-menu { display: none; }
 }
 
 @media (max-width: 480px) {
-  .top-links .icon-link img { width: 24px; height: 24px; }
   .about-box img.about-photo { width: 100%; }
 }
